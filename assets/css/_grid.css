@@ -1,0 +1,24 @@
+.Grid {
+  display: flex;
+  align-items: center;
+}
+
+.Grid-cell {
+  flex: 1;
+}
+
+.Grid--fit > .Grid-cell {
+  flex: 1;
+}
+.Grid--full > .Grid-cell {
+  flex: 0 0 100%;
+}
+.Grid--1of2 > .Grid-cell {
+  flex: 0 0 50%;
+}
+.Grid--1of3 > .Grid-cell {
+  flex: 0 0 33.3333%;
+}
+.Grid--1of4 > .Grid-cell {
+  flex: 0 0 25%;
+}

@@ -1,0 +1,11 @@
+.text-right {
+  text-align: right;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.content-end {
+  justify-content: flex-end;
+}
