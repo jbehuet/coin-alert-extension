@@ -4,7 +4,7 @@ components.coins_list = function (coins) {
 
     const onStorageSync = (base, timePeriod) => {
         dom.render("change", `${timePeriod} change`);
-        Promise.all(coins.map(coinId => transport.fetch(`${base_url}${coinId}?base=${base}&timePeriod=${timePeriod}`)))
+        Promise.all(coins.map(coin => transport.fetch(`${base_url}${coin.id}?base=${base}&timePeriod=${timePeriod}`)))
             .then(responses => {
                 dom.unmount("loader");
                 responses.map(response => {
