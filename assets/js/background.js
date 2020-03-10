@@ -24,7 +24,7 @@ chrome.runtime.onInstalled.addListener(function () {
     coins: [
       { id: 1, threshold: 7500 },
       { id: 2, threshold: 155 },
-      { id: 46, threshold: 0.19 }
+      { id: 46, threshold: 0.18 }
     ],
     base: "EUR",
     timePeriod: "24h"
@@ -41,7 +41,8 @@ chrome.runtime.onInstalled.addListener(function () {
           const text = responses.reduce((prev, response) => {
             const coin = coins.find(coin => coin.id === response.data.coin.id)
             if (Number(Number(response.data.coin.price).toFixed(2)) <= coin.threshold) {
-              prev = prev ? prev + "|" + response.data.coin.symbol : response.data.coin.symbol;
+              prev += "!"
+              //prev = prev ? prev + "|" + response.data.coin.symbol : response.data.coin.symbol;
             }
             return prev
           }, '');
@@ -52,7 +53,7 @@ chrome.runtime.onInstalled.addListener(function () {
         })
     })
 
-  }, 5 * 60 * 1000)
+  }, 1000)
 
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
