@@ -19,8 +19,10 @@ const fetch = (url) => new Promise((resolve, reject) => {
   xhr.send();
 });
 
-chrome.runtime.onInstalled.addListener(function () {
-  chrome.storage.sync.set({
+
+
+browser.runtime.onInstalled.addListener(function () {
+  browser.storage.sync.set({
     coins: [
       { id: 1, threshold: 7500 },
       { id: 2, threshold: 155 },
@@ -29,10 +31,8 @@ chrome.runtime.onInstalled.addListener(function () {
     base: "EUR",
     timePeriod: "24h"
   })
-
-
   setInterval(function () {
-    chrome.storage.sync.get("coins", function (data) {
+    browser.storage.sync.get("coins", function (data) {
       const coins = data.coins;
       const base_url = "https://api.coinranking.com/v1/public/coin/";
 
@@ -47,21 +47,11 @@ chrome.runtime.onInstalled.addListener(function () {
             return prev
           }, '');
 
-          chrome.browserAction.setBadgeText({ text })
+          browser.browserAction.setBadgeText({ text })
         }).catch(error => {
           console.log(error)
         })
     })
 
   }, 1000)
-
-
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-    chrome.declarativeContent.onPageChanged.addRules([{
-      conditions: [new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: { schemes: ['https', 'http'] },
-      })],
-      actions: [new chrome.declarativeContent.ShowPageAction()]
-    }]);
-  });
 });

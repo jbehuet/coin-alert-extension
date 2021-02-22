@@ -9,6 +9,6 @@ components.popup = (coins) => {
     return content;
 }
 
-chrome.storage.sync.get("coins", function (data) {
+browser.storage.sync.get("coins", function (data) {
     dom.render("popup", components.popup(data.coins));
 })

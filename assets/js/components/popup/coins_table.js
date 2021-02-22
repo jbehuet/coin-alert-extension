@@ -39,8 +39,8 @@ components.coins_list = function (coins) {
     `;
 
     //Sync with storage to get base
-    chrome.storage.sync.get('base', ({ base }) => {
-        chrome.storage.sync.get('timePeriod', ({ timePeriod }) => onStorageSync(base, timePeriod))
+    browser.storage.sync.get('base', ({ base }) => {
+        browser.storage.sync.get('timePeriod', ({ timePeriod }) => onStorageSync(base, timePeriod))
     })
     return content;
 }

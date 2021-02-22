@@ -14,7 +14,7 @@ const components = {
         return `
         <header>
             <div class="withIcon">
-                <img src="assets/images/coin32.png" width="16" />
+                <img src="/assets/images/coin32.png" width="16" />
                 Coin Alert
             </div>
         </header>`
