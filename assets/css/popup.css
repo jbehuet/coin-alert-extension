@@ -62,3 +62,21 @@ td {
 .negative svg {
   stroke: var(--red);
 }
+
+.pending {
+  color: var(--grey-ligth);
+  font-style: italic;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pending > div {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  background-image: url("/assets/images/coin32.png");
+  background-size: contain;
+  animation: flip-coin 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
