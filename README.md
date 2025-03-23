@@ -1,7 +1,7 @@
 # Coin Alert Extension
 
 This extension is a browser extension.
-Who display a configurable list of values for different currencies and you can be notified when a threshold for one of the currencies is reached.
+Who display a configurable list of values for different currencies and you can be notified when a threshold (_not available yet, notifications coming soon_) for one of the currencies is reached.
 
 ### Preview
 
