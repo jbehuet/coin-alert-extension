@@ -21,7 +21,7 @@ const components = {
         const now = new Date(updatedAt);
         return `
         <footer>
-           <div class="time">last update at : ${now.getHours()+":"+ now.getMinutes() + ":" + now.getSeconds()}</div>
+           <div class="time">last update at : ${now.getHours().toString().padStart(2, "0") +":"+ now.getMinutes().toString().padStart(2, "0") + ":" + now.getSeconds().toString().padStart(2, "0")}</div>
            <div>version 0.2.0 - provided by <a href="https://coingecko.com">CoinGecko API</a></div>
         </footer>`
     }
